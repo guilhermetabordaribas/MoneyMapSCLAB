@@ -1,0 +1,26 @@
+## Bem-vindo ao MoneyMapSCLAB wiki!
+
+Para começar a contribuir com o projeto ou personalizar o programa, siga os passos inciais:
+
+1. [Instalar Python 3](https://tutorial.djangogirls.org/pt/python_installation/):
+   * Download para [Windows](https://www.python.org/downloads/windows/)
+   * Download para [macOS](https://www.python.org/downloads/macos/)
+   * Para o linux (Debian/Ubunut) instale com ```sudo apt-get install python3``` e ```sudo apt-get install python3-pip```
+
+2. [Criar ambiente virtual](https://tutorial.djangogirls.org/pt/django_installation/#ambiente-virtual):
+    1. Crie uma pasta onde será criado o ambiente e acesse via cmd ou terminal
+    2. ```python3 -m venv ssmEnv```
+
+3. Ativar o ambiente virtual:
+   * Windows: ```ssmEnv\Scripts\activate```
+   * Linux:   ```source ssmEnv/bin/activate```
+
+3. Instalar pacotes e dependências:
+   * ```pip install -r requirements.txt```, o arquivo [requirements.txt](https://github.com/guilhermetabordaribas/MoneyMapSCLAB/blob/master/requirements.txt) está relacionado na documentação.
+
+4. Fazer o [download](https://github.com/guilhermetabordaribas/MoneyMapSCLAB/archive/refs/heads/master.zip) do pacote ou clonar (```git clone https://github.com/guilhermetabordaribas/MoneyMapSCLAB.git```) o projeto em seu computador.
+
+5. Correr (run) o arquivo sclabMM.py:
+   * ```python sclabMM.py```
+
+## Se tudo estiver correto, a janela do programa irá abrir e você poderá rodar os backtests de suas estratégias.

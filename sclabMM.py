@@ -39,6 +39,8 @@ from tkinter import ttk
 from tkinter import filedialog
 from tkinter import messagebox
 
+import os
+
 from ttkbootstrap import Style
 import webbrowser
 
@@ -388,7 +390,8 @@ def gera_calcula_backtest(e):
 		panel.configure(image=img_stonks)
 		panel.image = img_stonks
 
-	
+	if combobox_select_source.get()!='Cotação Yahoo-finance':
+		data[0] = os.path.basename(data[0])
 	label_report['text'] = \
 """Dados das cotações:\t{} {} {}
 
@@ -397,7 +400,7 @@ Total de trades vencedores:\t{}
 Total de lucro líquido:\t${}
 Total de trades perdedores:\t{}
 Total de perda líquida:\t${}
-Percentual lucrativo:\t{}
+Percentual lucrativo:\t{}%
 Fator de lucro:\t\t{}
 Ganho máximo:\t\t${}({}%)
 Média de ganhos:\t\t${}({}%)
@@ -416,8 +419,8 @@ Retorno Percentual:\t{}%""".format(
 	result_report['percentual_lucro'],
 	result_report['fator_lucro'],
 	result_report['ganho_maximo'],result_report['ganho_maximo(%)'],
-	result_report['perda_maxima'],result_report['perda_maxima(%)'],
 	result_report['media_ganhos'],result_report['media_ganhos(%)'],
+	result_report['perda_maxima'],result_report['perda_maxima(%)'],
 	result_report['media_perdas'],result_report['media_perdas(%)'],
 	result_report['ganhos_por_perdas'],
 	result_report['retorno'],
@@ -1376,7 +1379,7 @@ button_insert_quit_conditional.grid(row=4, column=6, pady=pady, padx=padx, stick
 button_insert_quit_conditional.bind('<Button-1>', insert_quit_conditional)
 
 # Text Enter Setup
-label_quit_setup = ttk.Label(labelframe_quit_setup, text='Setup de entrada (abertura de posição):')
+label_quit_setup = ttk.Label(labelframe_quit_setup, text='Setup de saída (fechamento de posição):')
 label_quit_setup.grid(row=5, column=0, columnspan=6, pady=(pady+15,pady), padx=padx, sticky='nsew')
 
 button_clear_quit_setup = ttk.Button(labelframe_quit_setup, text='Limpar Setup', style='danger.TButton')
@@ -1587,6 +1590,5 @@ my_notebook.add(result_tab, text='Resultados')
 my_notebook.add(about_tab, text='Sobre')
 
 root.mainloop()
-
 
 
